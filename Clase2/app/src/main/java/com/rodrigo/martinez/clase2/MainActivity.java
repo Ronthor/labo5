@@ -22,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
         boton2.setOnClickListener(my_listener);
 
+        Button boton1 = (Button) findViewById(R.id.editButton1);
+
+        boton1.setOnClickListener(my_listener);
+
 
     }
 }
