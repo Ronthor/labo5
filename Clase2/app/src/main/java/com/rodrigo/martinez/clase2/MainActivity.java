@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IMostrarInfo {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button boton2 = (Button) findViewById(R.id.editButton2);
 
-        View.OnClickListener my_listener = new MyListener();
+        View.OnClickListener my_listener = new MyListener(this);
 
         boton2.setOnClickListener(my_listener);
 
@@ -27,5 +27,11 @@ public class MainActivity extends AppCompatActivity {
         boton1.setOnClickListener(my_listener);
 
 
+    }
+
+    @Override
+    public void mostrarInfo() {
+        TextView texto = (TextView) super.findViewById(R.id.textView);
+        texto.setText("se hizo click");
     }
 }
